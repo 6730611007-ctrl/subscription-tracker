@@ -66,10 +66,7 @@
         </div>
 
         <div class="q-gutter-y-sm">
-          <div
-            class="demo-item row items-center justify-between q-px-md q-py-xs cursor-pointer"
-            @click="fillDemo('admin', '123456')"
-          >
+          
             <div class="role-badge role-admin">
               <span class="role-dot"></span>
               <span>ADMIN</span>
@@ -79,10 +76,7 @@
             </div>
           </div>
 
-          <div
-            class="demo-item row items-center justify-between q-px-md q-py-xs cursor-pointer"
-            @click="fillDemo('user', '123456')"
-          >
+          
             <div class="role-badge role-user">
               <span class="role-dot"></span>
               <span>USER</span>
@@ -91,8 +85,8 @@
               user / 123456
             </div>
           </div>
-        </div>
-      </div>
+        
+      
     </q-card>
   </q-page>
 </template>
@@ -111,11 +105,6 @@ const username = ref('')
 const password = ref('')
 const showPassword = ref(false)
 const isLoading = ref(false)
-
-const fillDemo = (demoUser, demoPass) => {
-  username.value = demoUser
-  password.value = demoPass
-}
 
 const handleLogin = async () => {
   isLoading.value = true
