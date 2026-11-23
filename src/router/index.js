@@ -22,6 +22,7 @@ export default route(function () {
     history: createHistory(import.meta.env.VUE_ROUTER_BASE),
   })
 
+  // Global Route Guard
   Router.beforeEach((to, from, next) => {
   const authStore = useAuthStore()
   if (to.meta.requiresAuth && !authStore.isLoggedIn) {
