@@ -62,29 +62,33 @@
 
       <div class="demo-box q-mt-lg q-pt-md">
         <div class="text-caption text-grey-7 text-weight-bold text-center q-mb-sm">
-          บัญชีสำหรับทดสอบระบบ (คลิกเพื่อกรอกอัตโนมัติ)
+          บัญชีสำหรับทดสอบระบบ
         </div>
 
-        <div class="q-gutter-y-sm">
-          
+        <div class="demo-list">
+          <div
+            class="demo-item"
+            @click="fillDemo('admin', '123456')"
+          >
             <div class="role-badge role-admin">
               <span class="role-dot"></span>
               <span>ADMIN</span>
             </div>
-            <div class="text-caption text-weight-bold text-grey-8">
-              admin / 123456
-            </div>
+            <span class="demo-cred">admin / 123456</span>
           </div>
 
-          
+          <div
+            class="demo-item"
+            @click="fillDemo('user', '123456')"
+          >
             <div class="role-badge role-user">
               <span class="role-dot"></span>
               <span>USER</span>
             </div>
-            <div class="text-caption text-weight-bold text-grey-8">
-              user / 123456
-            </div>
+            <span class="demo-cred">user / 123456</span>
           </div>
+        </div>
+      </div>
         
       
     </q-card>
@@ -164,10 +168,21 @@ const handleLogin = async () => {
   border-radius: 0;
 }
 
+.demo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .demo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
   border-radius: 9999px;
+  cursor: pointer;
   transition: all 0.2s ease;
 }
 
@@ -177,53 +192,30 @@ const handleLogin = async () => {
   transform: translateY(-1px);
 }
 
-.role-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.2rem 0.65rem;
-  border-radius: 9999px;
-  font-size: 0.7rem;
+.demo-cred {
+  font-size: 12px;
   font-weight: 700;
-}
-
-.role-dot {
-  width: 0.38rem;
-  height: 0.38rem;
-  border-radius: 9999px;
-}
-
-.role-admin {
-  background-color: #ffedd5;
-  color: #c2410c;
-}
-
-.role-admin .role-dot {
-  background-color: #ea580c;
-}
-
-.role-user {
-  background-color: #e0f2fe;
-  color: #0369a1;
-}
-
-.role-user .role-dot {
-  background-color: #0284c7;
+  color: #334155;
+  font-variant-numeric: tabular-nums;
 }
 
 :global(body.body--dark) .login-card .demo-box {
-  background: transparent !important;
+  background: #000000 !important;
   border: none !important;
-  border-top: 1px solid #27272a !important;
+  border-top: 1px solid #1e293b !important;
   border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
 :global(body.body--dark) .login-card .demo-item {
   background: #000000 !important;
-  border: 1px solid #27272a !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 :global(body.body--dark) .login-card .demo-item:hover {
-  border-color: #38bdf8 !important;
+  background: #111111 !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 </style>
