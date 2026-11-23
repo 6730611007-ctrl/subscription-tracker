@@ -10,7 +10,7 @@ import { useAuthStore } from '../stores/authStore'
 import { Notify } from 'quasar'
 
 export default route(function () {
-  const createHistory = import.meta.env.SSR
+  const createHistory = import.meta.env
     ? createMemoryHistory
     : import.meta.env.VUE_ROUTER_MODE === 'history'
       ? createWebHistory
