@@ -1,1 +1,138 @@
-// app global css
+body.body--dark,
+body.body--dark .q-layout,
+body.body--dark .q-page-container,
+body.body--dark .q-page,
+body.body--dark .login-bg {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+body.body--dark .q-header,
+body.body--dark .main-header,
+body.body--dark .q-toolbar {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  border-bottom: 1px solid #27272a !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+body.body--dark .q-drawer,
+body.body--dark .q-drawer__content,
+body.body--dark .nav-drawer {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  border-right: 1px solid #27272a !important;
+  color: #ffffff !important;
+}
+
+body.body--dark .bg-white,
+body.body--dark .bg-grey-1,
+body.body--dark .bg-grey-2,
+body.body--dark .bg-grey-3,
+body.body--dark .bg-blue-1,
+body.body--dark .bg-red-1 {
+  background: #000000 !important;
+  background-color: #000000 !important;
+}
+
+body.body--dark .q-card,
+body.body--dark [class*="card"],
+body.body--dark [class*="pill"],
+body.body--dark .profile-card,
+body.body--dark .login-card,
+body.body--dark .summary-card,
+body.body--dark .demo-box,
+body.body--dark .demo-item {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  border: 1px solid #27272a !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+body.body--dark .nav-item-active,
+body.body--dark .q-item--active {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  border: 1px solid #38bdf8 !important;
+  border-left: 4px solid #38bdf8 !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+body.body--dark .role-badge,
+body.body--dark .btn-logout {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  border: 1px solid #27272a !important;
+  color: #ffffff !important;
+}
+
+body.body--dark .btn-logout {
+  border-color: #e11d48 !important;
+}
+
+body.body--dark h1,
+body.body--dark h2,
+body.body--dark h3,
+body.body--dark h4,
+body.body--dark h5,
+body.body--dark h6,
+body.body--dark p,
+body.body--dark .brand-text,
+body.body--dark .user-name,
+body.body--dark .nav-label,
+body.body--dark .menu-section-label,
+body.body--dark .text-dark,
+body.body--dark .text-black,
+body.body--dark .text-grey-10,
+body.body--dark .text-grey-9,
+body.body--dark .text-grey-8,
+body.body--dark .text-grey-7,
+body.body--dark .text-grey-6,
+body.body--dark .text-grey-5,
+body.body--dark .q-item__label {
+  color: #ffffff !important;
+}
+
+body.body--dark .q-field__control {
+  background-color: #000000 !important;
+}
+
+body.body--dark .q-field__native,
+body.body--dark .q-field__input,
+body.body--dark .q-field__label,
+body.body--dark .q-select__dropdown-icon {
+  color: #ffffff !important;
+}
+
+body.body--dark .q-field--outlined .q-field__control:before {
+  border-color: #3f3f46 !important;
+}
+
+body.body--dark .q-menu {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid #27272a !important;
+}
+
+body.body--dark .q-separator {
+  background-color: #27272a !important;
+} 
+
+body.body--dark [class*="sub-"],
+body.body--dark [class*="subscription"],
+body.body--dark [class*="service"],
+body.body--dark [class*="member"],
+body.body--dark [class*="user-row"],
+body.body--dark [class*="user-item"],
+body.body--dark [class*="list-item"],
+body.body--dark [class*="list-row"] {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  border: 1px solid #27272a !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}

@@ -412,72 +412,70 @@ const confirmLogout = () => {
 
 :global(.body--dark) .app-layout,
 :global(.body--dark) .main-page-container {
-  background-color: #0f172a;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 :global(.body--dark) .main-header {
-  background: rgba(15, 23, 42, 0.92) !important;
-  border-bottom: 1px solid #1e293b;
+  background: #000000 !important;
+  border-bottom: 1px solid #27272a;
+  box-shadow: none;
 }
 
-:global(.body--dark) .brand-text {
-  color: #f8fafc;
+:global(.body--dark) .brand-text,
+:global(.body--dark) .menu-toggle-btn,
+:global(.body--dark) .user-name,
+:global(.body--dark) .menu-section-label,
+:global(.body--dark) .nav-item,
+:global(.body--dark) .nav-icon,
+:global(.body--dark) .nav-label {
+  color: #ffffff !important;
 }
 
 :global(.body--dark) .nav-drawer {
-  background-color: #1e293b;
-  border-right: 1px solid #334155;
+  background-color: #000000;
+  border-right: 1px solid #27272a;
 }
 
 :global(.body--dark) .profile-card {
-  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
-  border-color: #334155;
+  background: #000000;
+  border: 1px solid #27272a;
+  box-shadow: none;
 }
 
 :global(.body--dark) .profile-avatar {
-  border-color: #334155;
-}
-
-:global(.body--dark) .user-name {
-  color: #f1f5f9;
+  border-color: #27272a;
 }
 
 :global(.body--dark) .role-badge {
-  background-color: rgba(2, 132, 199, 0.2);
-  color: #38bdf8;
+  background-color: #111111;
+  border: 1px solid #27272a;
+  color: #ffffff;
 }
 
 :global(.body--dark) .btn-logout {
-  background-color: rgba(225, 29, 72, 0.15);
-  border-color: rgba(244, 63, 94, 0.3);
-  color: #fb7185;
+  background-color: #000000;
+  border: 1px solid #e11d48;
+  color: #ffffff;
 }
 
 :global(.body--dark) .btn-logout:hover {
-  background-color: rgba(225, 29, 72, 0.25);
+  background-color: #e11d48;
+  color: #ffffff;
 }
 
 :global(.body--dark) .drawer-divider {
-  background-color: #334155;
-}
-
-:global(.body--dark) .nav-item {
-  color: #cbd5e1;
+  background-color: #27272a;
 }
 
 :global(.body--dark) .nav-item:hover {
-  background-color: #334155;
-  color: #38bdf8;
-}
-
-:global(.body--dark) .nav-icon {
-  color: #94a3b8;
+  background-color: #111111;
 }
 
 :global(.body--dark) .nav-item-active {
-  background-color: rgba(2, 132, 199, 0.18) !important;
-  color: #38bdf8 !important;
-  border-left-color: #38bdf8;
+  background-color: #111111 !important;
+  color: #ffffff !important;
+  border-left: 4px solid #38bdf8;
 }
 
 :global(.body--dark) .nav-item-active .nav-icon {
@@ -485,7 +483,8 @@ const confirmLogout = () => {
 }
 
 :global(.body--dark) .logout-card {
-  background-color: #1e293b;
-  color: #f1f5f9;
+  background-color: #000000;
+  border: 1px solid #27272a;
+  color: #ffffff;
 }
 </style>

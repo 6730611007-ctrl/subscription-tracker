@@ -3,7 +3,9 @@
     <q-card flat class="login-card q-pa-lg q-pa-sm-xl">
       <div class="text-center q-mb-lg">
         <div class="flex flex-center q-mb-sm">
-          <AppLogo :size="52" />
+          <q-avatar size="54px" class="brand-avatar">
+            <q-icon name="subscriptions" size="28px" color="white" />
+          </q-avatar>
         </div>
         <div class="text-h5 text-weight-bolder text-grey-9">Subscription Tracker</div>
         <div class="text-body2 text-grey-6 q-mt-xs">เข้าสู่ระบบเพื่อจัดการค่าบริการรายเดือน</div>
@@ -58,12 +60,12 @@
         />
       </q-form>
 
-      <div class="demo-box q-mt-lg q-pa-md">
+      <div class="demo-box q-mt-lg q-pt-md">
         <div class="text-caption text-grey-7 text-weight-bold text-center q-mb-sm">
           บัญชีสำหรับทดสอบระบบ (คลิกเพื่อกรอกอัตโนมัติ)
         </div>
 
-        <div class="q-gutter-y-xs">
+        <div class="q-gutter-y-sm">
           <div
             class="demo-item row items-center justify-between q-px-md q-py-xs cursor-pointer"
             @click="fillDemo('admin', '123456')"
@@ -100,7 +102,6 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useQuasar } from 'quasar'
 import { useAuthStore } from '../stores/authStore'
-
 
 const router = useRouter()
 const $q = useQuasar()
@@ -147,6 +148,12 @@ const handleLogin = async () => {
   background: radial-gradient(circle at top left, #e0f2fe 0%, #f8fafc 45%, #eff6ff 100%);
 }
 
+.brand-avatar {
+  background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+  border-radius: 16px;
+  box-shadow: 0 8px 18px -4px rgba(2, 132, 199, 0.35);
+}
+
 .login-card {
   width: 100%;
   max-width: 430px;
@@ -162,24 +169,23 @@ const handleLogin = async () => {
 }
 
 .demo-box {
-  background: linear-gradient(80deg, #ffffff, #e0f2fe, #bae6fd, #dbeafe);
-  background-size: 300% 300%;
-  animation: gradientMove 4s ease infinite;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 22px;
+  background: transparent;
+  border: none;
+  border-top: 1px solid #e2e8f0;
+  border-radius: 0;
 }
 
 .demo-item {
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(226, 232, 240, 0.9);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   border-radius: 9999px;
   transition: all 0.2s ease;
 }
 
 .demo-item:hover {
-  background: #ffffff;
+  background: #f0f9ff;
+  border-color: #38bdf8;
   transform: translateY(-1px);
-  box-shadow: 0 4px 10px rgba(2, 132, 199, 0.1);
 }
 
 .role-badge {
@@ -216,9 +222,19 @@ const handleLogin = async () => {
   background-color: #0284c7;
 }
 
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+:global(body.body--dark) .login-card .demo-box {
+  background: transparent !important;
+  border: none !important;
+  border-top: 1px solid #27272a !important;
+  border-radius: 0 !important;
+}
+
+:global(body.body--dark) .login-card .demo-item {
+  background: #000000 !important;
+  border: 1px solid #27272a !important;
+}
+
+:global(body.body--dark) .login-card .demo-item:hover {
+  border-color: #38bdf8 !important;
 }
 </style>
