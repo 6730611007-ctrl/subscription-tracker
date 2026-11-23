@@ -13,7 +13,7 @@
 
         <q-select
           v-model="form.category"
-          :options="['Entertainment', 'AI & Dev', 'Cloud Storage', 'Music', 'Other']"
+          :options="['ความบันเทิง', 'AI & Development', 'Cloud Storage', 'Music', 'Other']"
           outlined
           label="หมวดหมู่"
           :rules="[val => !!val || 'กรุณาเลือกหมวดหมู่']"

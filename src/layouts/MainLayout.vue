@@ -19,6 +19,20 @@
           </div>
           <span class="brand-text">Sub<span class="brand-highlight">Tracker</span></span>
         </q-toolbar-title>
+
+        <q-btn
+          flat
+          round
+          dense
+          :icon="$q.dark.isActive ? 'light_mode' : 'dark_mode'"
+          :color="$q.dark.isActive ? 'amber-4' : 'grey-7'"
+          @click="toggleDarkMode"
+          class="dark-toggle-btn"
+        >
+          <q-tooltip>
+            {{ $q.dark.isActive ? 'เปลี่ยนเป็นโหมดสว่าง' : 'เปลี่ยนเป็นโหมดมืด' }}
+          </q-tooltip>
+        </q-btn>
       </q-toolbar>
     </q-header>
 
@@ -107,11 +121,11 @@
     </q-page-container>
 
     <q-dialog v-model="logoutDialog" persistent>
-      <q-card style="min-width: 320px; border-radius: 16px" class="q-pa-sm shadow-4">
+      <q-card style="min-width: 320px; border-radius: 16px" class="q-pa-sm shadow-4 logout-card">
         <q-card-section class="row items-center q-pb-none">
           <q-avatar icon="logout" color="red-1" text-color="negative" size="48px" class="q-mr-md" />
           <div>
-            <div class="text-h6 text-weight-bold text-dark">ออกจากระบบ</div>
+            <div class="text-h6 text-weight-bold" :class="$q.dark.isActive ? 'text-white' : 'text-dark'">ออกจากระบบ</div>
             <div class="text-body2 text-grey-7 q-mt-xs">คุณแน่ใจหรือไม่ที่จะออกจากระบบ?</div>
           </div>
         </q-card-section>
@@ -126,7 +140,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useQuasar } from 'quasar'
 import { useAuthStore } from '../stores/authStore'
@@ -140,6 +154,17 @@ const authStore = useAuthStore()
 function toggleLeftDrawer () {
   leftDrawerOpen.value = !leftDrawerOpen.value
 }
+
+const toggleDarkMode = () => {
+  $q.dark.toggle()
+  localStorage.setItem('darkMode', $q.dark.isActive)
+}
+
+onMounted(() => {
+  if (localStorage.getItem('darkMode') === 'true') {
+    $q.dark.set(true)
+  }
+})
 
 const onLogout = () => {
   logoutDialog.value = true
@@ -191,6 +216,14 @@ const confirmLogout = () => {
 
 .menu-toggle-btn:hover {
   color: #0284c7;
+}
+
+.dark-toggle-btn {
+  transition: transform 0.2s ease;
+}
+
+.dark-toggle-btn:hover {
+  transform: scale(1.08);
 }
 
 .header-brand {
@@ -375,5 +408,84 @@ const confirmLogout = () => {
 
 .nav-item-active .nav-icon {
   color: #0284c7 !important;
+}
+
+:global(.body--dark) .app-layout,
+:global(.body--dark) .main-page-container {
+  background-color: #0f172a;
+}
+
+:global(.body--dark) .main-header {
+  background: rgba(15, 23, 42, 0.92) !important;
+  border-bottom: 1px solid #1e293b;
+}
+
+:global(.body--dark) .brand-text {
+  color: #f8fafc;
+}
+
+:global(.body--dark) .nav-drawer {
+  background-color: #1e293b;
+  border-right: 1px solid #334155;
+}
+
+:global(.body--dark) .profile-card {
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  border-color: #334155;
+}
+
+:global(.body--dark) .profile-avatar {
+  border-color: #334155;
+}
+
+:global(.body--dark) .user-name {
+  color: #f1f5f9;
+}
+
+:global(.body--dark) .role-badge {
+  background-color: rgba(2, 132, 199, 0.2);
+  color: #38bdf8;
+}
+
+:global(.body--dark) .btn-logout {
+  background-color: rgba(225, 29, 72, 0.15);
+  border-color: rgba(244, 63, 94, 0.3);
+  color: #fb7185;
+}
+
+:global(.body--dark) .btn-logout:hover {
+  background-color: rgba(225, 29, 72, 0.25);
+}
+
+:global(.body--dark) .drawer-divider {
+  background-color: #334155;
+}
+
+:global(.body--dark) .nav-item {
+  color: #cbd5e1;
+}
+
+:global(.body--dark) .nav-item:hover {
+  background-color: #334155;
+  color: #38bdf8;
+}
+
+:global(.body--dark) .nav-icon {
+  color: #94a3b8;
+}
+
+:global(.body--dark) .nav-item-active {
+  background-color: rgba(2, 132, 199, 0.18) !important;
+  color: #38bdf8 !important;
+  border-left-color: #38bdf8;
+}
+
+:global(.body--dark) .nav-item-active .nav-icon {
+  color: #38bdf8 !important;
+}
+
+:global(.body--dark) .logout-card {
+  background-color: #1e293b;
+  color: #f1f5f9;
 }
 </style>

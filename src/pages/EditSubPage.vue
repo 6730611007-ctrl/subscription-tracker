@@ -53,7 +53,7 @@ import { ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useQuasar } from 'quasar'
 import { useSubscriptionStore } from '../stores/subscriptionStore.js'
-import { useAuthStore } from '../stores/authStore.js'
+import { useAuthStore } from '../stores/authStore'
 
 const route = useRoute()
 const router = useRouter()
